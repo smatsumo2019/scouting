@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF4DA6</color>
+    <color name="colorPrimaryDark">#FF3399</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="teamColor">#FF4DA6</color>
+</resources>

@@ -221,12 +221,44 @@
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/platformText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/climbRadio"
+        android:layout_margin="3dp"
+        android:text="Did they park by the end?" />
+
+    <RadioGroup
+        android:id="@+id/platformRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/platformText"
+        android:layout_margin="0dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/platform_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+
+
+        <RadioButton
+            android:id="@+id/platform_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="No" />
+
+    </RadioGroup>
+
 
     <TextView
         android:id="@+id/teleopfoulNullText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/climbRadio"
+        android:layout_below="@+id/platformRadio"
         android:layout_margin="3dp"
         android:text="Fouled during the match?" />
 

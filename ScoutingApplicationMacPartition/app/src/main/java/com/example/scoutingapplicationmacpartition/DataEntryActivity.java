@@ -17,28 +17,32 @@ import java.util.List;
 
 public class DataEntryActivity extends AppCompatActivity {
 
+
+    int totalScore = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data_entry_activity);
-       boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
-       boolean checkPower = onCheckboxClicked(findViewById(R.id.checkbox_force));
-       boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
 
-       int boostInt;
-       int powerInt;
-       int levitateInt;
-       
-       if (checkBoost) {
+        boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
+        boolean checkForce = onCheckboxClicked(findViewById(R.id.checkbox_force));
+        boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
+
+        final int boostInt;
+        final int forceInt;
+        final int levitateInt;
+
+        if (checkBoost) {
            boostInt = 20;
-       } else
+        } else
            boostInt = 0;
 
 
-        if (checkPower) {
-            powerInt = 20;
+        if (checkForce) {
+            forceInt = 20;
         } else
-            powerInt = 0;
+            forceInt = 0;
 
 
         if (checkLevitate) {
@@ -49,11 +53,11 @@ public class DataEntryActivity extends AppCompatActivity {
 
 
         // Spinner element
-        Spinner autoSwitchSpinner = (Spinner) findViewById(R.id.autoSwitch);
-        Spinner autoScaleSpinner = (Spinner) findViewById(R.id.autoScale);
-        Spinner teleopSwitchSpinner = (Spinner) findViewById(R.id.teleopSwitch);
-        Spinner teleopScaleSpinner = (Spinner) findViewById(R.id.teleopScale);
-        Spinner teleopExchangeSpinner = (Spinner) findViewById(R.id.teleopExchange);
+        final Spinner autoSwitchSpinner = (Spinner) findViewById(R.id.autoSwitch);
+        final Spinner autoScaleSpinner = (Spinner) findViewById(R.id.autoScale);
+        final Spinner teleopSwitchSpinner = (Spinner) findViewById(R.id.teleopSwitch);
+        final Spinner teleopScaleSpinner = (Spinner) findViewById(R.id.teleopScale);
+        final Spinner teleopExchangeSpinner = (Spinner) findViewById(R.id.teleopExchange);
 
         // Spinner click listener
         //spinner.setOnItemSelectedListener(this);
@@ -128,42 +132,34 @@ public class DataEntryActivity extends AppCompatActivity {
         entryButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+
+                String autoScaleString = autoScaleSpinner.getSelectedItem().toString();
+                int autoScaleInt = Integer.parseInt(autoScaleString);
+                String autoSwitchString = autoSwitchSpinner.getSelectedItem().toString();
+                int autoSwitchInt = Integer.parseInt(autoSwitchString);
+                String teleopScaleString = teleopScaleSpinner.getSelectedItem().toString();
+                int teleopScaleInt = Integer.parseInt(teleopScaleString);
+                String teleopSwitchString = teleopScaleSpinner.getSelectedItem().toString();
+                int teleopSwitchInt = Integer.parseInt(teleopSwitchString);
+                String teleopExchangeString = teleopScaleSpinner.getSelectedItem().toString();
+                int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
+
+                
+                totalScore+=boostInt;
+                totalScore+=forceInt;
+                totalScore+=levitateInt;
+                totalScore+= (autoScaleInt*10);
+                totalScore+= (autoSwitchInt*10);
+                totalScore+= (teleopExchangeInt*5);
+                totalScore+= (teleopScaleInt*5);
+                totalScore+= (teleopSwitchInt*5);
+
+
+
+
+
+
                 startActivity(returnMainActivity);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             }
         });

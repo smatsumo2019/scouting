@@ -21,6 +21,32 @@ public class DataEntryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data_entry_activity);
+       boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
+       boolean checkPower = onCheckboxClicked(findViewById(R.id.checkbox_force));
+       boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
+
+       int boostInt;
+       int powerInt;
+       int levitateInt;
+       
+       if (checkBoost) {
+           boostInt = 20;
+       } else
+           boostInt = 0;
+
+
+        if (checkPower) {
+            powerInt = 20;
+        } else
+            powerInt = 0;
+
+
+        if (checkLevitate) {
+            levitateInt = 30;
+        } else
+            levitateInt = 0;
+
+
 
         // Spinner element
         Spinner autoSwitchSpinner = (Spinner) findViewById(R.id.autoSwitch);
@@ -182,32 +208,12 @@ public class DataEntryActivity extends AppCompatActivity {
     }
 
 
-    public void onCheckboxClicked(View view) {
+    public static boolean onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
 
         // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.checkbox_levitate:
-                if (checked)
-                ;
-            else
-
-                break;
-            case R.id.checkbox_force:
-                if (checked)
-                ;
-            else
-
-                break;
-            case R.id.checkbox_boost:
-                if (checked)
-                    ;
-                else
-
-                    break;
-
-        }
+        return checked;
     }
 
 

@@ -35,21 +35,21 @@ public class DataEntryActivity extends AppCompatActivity {
 
         if (checkBoost) {
            boostInt = 20;
-        } else
-           boostInt = 0;
-
+        } else {
+            boostInt = 0;
+        }
 
         if (checkForce) {
             forceInt = 20;
-        } else
+        } else {
             forceInt = 0;
-
+        }
 
         if (checkLevitate) {
             levitateInt = 30;
-        } else
+        } else {
             levitateInt = 0;
-
+        }
 
 
         // Spinner element
@@ -144,7 +144,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 String teleopExchangeString = teleopScaleSpinner.getSelectedItem().toString();
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
-                
+
                 totalScore+=boostInt;
                 totalScore+=forceInt;
                 totalScore+=levitateInt;

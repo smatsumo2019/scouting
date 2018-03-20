@@ -30,8 +30,8 @@ public class DataEntryActivity extends AppCompatActivity {
 
 
         //EditText Code
-        EditText matchInput = (EditText)findViewById(R.id.textField);
-        String matchString      =  matchInput.getText().toString();
+        final EditText matchInput = (EditText)findViewById(R.id.matchField);
+        final EditText teamInput = (EditText)findViewById(R.id.teamField);
 
 
         //Checkbox Code
@@ -120,6 +120,7 @@ public class DataEntryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
 
+
                 String autoScaleString = autoScaleSpinner.getSelectedItem().toString();
                 int autoScaleInt = Integer.parseInt(autoScaleString);
                 String autoSwitchString = autoSwitchSpinner.getSelectedItem().toString();
@@ -132,6 +133,8 @@ public class DataEntryActivity extends AppCompatActivity {
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
 
+                String matchString      =  matchInput.getText().toString();
+                String teamString      =  matchInput.getText().toString();
 
 
 

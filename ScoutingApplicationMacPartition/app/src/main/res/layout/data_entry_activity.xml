@@ -15,17 +15,32 @@
         android:text="Match Number"/>
 
     <EditText
-        android:id="@+id/textField"
+        android:id="@+id/matchField"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/matchNumber"
         android:hint="ex: Match 17" />
 
     <TextView
+        android:id="@+id/teamNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/matchField"
+        android:layout_margin="5dp"
+        android:text="Team Number"/>
+
+    <EditText
+        android:id="@+id/teamField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamNumber"
+        android:hint="ex: Team 172" />
+
+    <TextView
         android:id="@+id/autoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textField"
+        android:layout_below="@id/teamField"
         android:layout_margin="3dp"
         android:text="Autonomous Mode"
         android:textSize="16dp"/>

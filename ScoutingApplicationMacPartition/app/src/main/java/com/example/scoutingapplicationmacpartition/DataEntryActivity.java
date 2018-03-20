@@ -1,6 +1,8 @@
 package com.example.scoutingapplicationmacpartition;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,6 +28,13 @@ public class DataEntryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data_entry_activity);
 
+
+        //EditText Code
+        EditText matchInput = (EditText)findViewById(R.id.textField);
+        String matchString      =  matchInput.getText().toString();
+
+
+        //Checkbox Code
         boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
         boolean checkForce = onCheckboxClicked(findViewById(R.id.checkbox_force));
         boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
@@ -52,17 +62,15 @@ public class DataEntryActivity extends AppCompatActivity {
         }
 
 
-        // Spinner element
+        // Spinner declarations
         final Spinner autoSwitchSpinner = (Spinner) findViewById(R.id.autoSwitch);
         final Spinner autoScaleSpinner = (Spinner) findViewById(R.id.autoScale);
         final Spinner teleopSwitchSpinner = (Spinner) findViewById(R.id.teleopSwitch);
         final Spinner teleopScaleSpinner = (Spinner) findViewById(R.id.teleopScale);
         final Spinner teleopExchangeSpinner = (Spinner) findViewById(R.id.teleopExchange);
 
-        // Spinner click listener
-        //spinner.setOnItemSelectedListener(this);
 
-        // Spinner Drop down elements
+        // Spinner Element Lists
         List<Integer> autoCubes = new ArrayList<>();
         autoCubes.add(0);
         autoCubes.add(1);
@@ -82,41 +90,20 @@ public class DataEntryActivity extends AppCompatActivity {
         teleopCubes.add(9);
 
 
-        // Creating adapter for spinner
+        // Adapter for Spinners
         ArrayAdapter<Integer> autoCubeArray = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, autoCubes);
         ArrayAdapter<Integer> teleopCubeArray = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, teleopCubes);
 
-        // Drop down layout style - list view with radio button
+        // Drop down layout assignmnt
         autoCubeArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
+        // Assigning Adapters
         autoSwitchSpinner.setAdapter(autoCubeArray);
         autoScaleSpinner.setAdapter(autoCubeArray);
 
         teleopSwitchSpinner.setAdapter(teleopCubeArray);
         teleopScaleSpinner.setAdapter(teleopCubeArray);
         teleopExchangeSpinner.setAdapter(teleopCubeArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -145,6 +132,9 @@ public class DataEntryActivity extends AppCompatActivity {
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
 
+
+
+
                 totalScore+=boostInt;
                 totalScore+=forceInt;
                 totalScore+=levitateInt;
@@ -153,6 +143,11 @@ public class DataEntryActivity extends AppCompatActivity {
                 totalScore+= (teleopExchangeInt*5);
                 totalScore+= (teleopScaleInt*5);
                 totalScore+= (teleopSwitchInt*5);
+
+
+                //Context context = getActivity();
+                //SharedPreferences sharedPref = context.getSharedPreferences(
+                //        getString(enteredName), Context.MODE_PRIVATE);
 
 
 
@@ -165,20 +160,6 @@ public class DataEntryActivity extends AppCompatActivity {
         });
 
     }
-
-
-
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        // On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-
-        // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-    }
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
-    }
-
 
     String crossYN = "Filler";
     boolean crossBool = false;

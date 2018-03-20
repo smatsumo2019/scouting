@@ -6,11 +6,27 @@
     android:orientation="vertical"
     android:id = "@+id/titleScreen">
 
+
+    <TextView
+        android:id="@+id/matchNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Match Number"/>
+
+    <EditText
+        android:id="@+id/textField"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/matchNumber"
+        android:hint="ex: Match 17" />
+
     <TextView
         android:id="@+id/autoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_below="@id/textField"
+        android:layout_margin="3dp"
         android:text="Autonomous Mode"
         android:textSize="16dp"/>
 
@@ -292,7 +308,6 @@
         android:layout_below="@id/teleopFoulRadio"
         android:id="@+id/submitButton"
         android:text="Submit"/>
-
 
 
 </RelativeLayout>

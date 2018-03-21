@@ -38,34 +38,6 @@ public class DataEntryActivity extends AppCompatActivity {
         final EditText teamInput = (EditText)findViewById(R.id.teamField);
 
 
-        //Checkbox Code
-        boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
-        boolean checkForce = onCheckboxClicked(findViewById(R.id.checkbox_force));
-        boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
-
-        final int boostInt;
-        final int forceInt;
-        final int levitateInt;
-
-        if (checkBoost) {
-           boostInt = 20;
-        } else {
-            boostInt = 0;
-        }
-
-        if (checkForce) {
-            forceInt = 20;
-        } else {
-            forceInt = 0;
-        }
-
-        if (checkLevitate) {
-            levitateInt = 30;
-        } else {
-            levitateInt = 0;
-        }
-
-
         // Spinner declarations
         final Spinner autoSwitchSpinner = (Spinner) findViewById(R.id.autoSwitch);
         final Spinner autoScaleSpinner = (Spinner) findViewById(R.id.autoScale);
@@ -124,6 +96,34 @@ public class DataEntryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
 
+                boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
+                boolean checkForce = onCheckboxClicked(findViewById(R.id.checkbox_force));
+                boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
+
+                int boostInt;
+                int forceInt;
+                int levitateInt;
+
+                if (checkBoost) {
+                    boostInt = 20;
+                } else {
+                    boostInt = 0;
+                }
+
+                if (checkForce) {
+                    forceInt = 20;
+                } else {
+                    forceInt = 0;
+                }
+
+                if (checkLevitate) {
+                    levitateInt = 30;
+                } else {
+                    levitateInt = 0;
+                }
+
+
+
                 matchString =  matchInput.getText().toString();
                 values[0] = matchString;
                 String teamString  =  matchInput.getText().toString();
@@ -138,10 +138,10 @@ public class DataEntryActivity extends AppCompatActivity {
                 String teleopScaleString = teleopScaleSpinner.getSelectedItem().toString();
                 values[4] = teleopScaleString;
                 int teleopScaleInt = Integer.parseInt(teleopScaleString);
-                String teleopSwitchString = teleopScaleSpinner.getSelectedItem().toString();
+                String teleopSwitchString = teleopSwitchSpinner.getSelectedItem().toString();
                 values[5] = teleopSwitchString;
                 int teleopSwitchInt = Integer.parseInt(teleopSwitchString);
-                String teleopExchangeString = teleopScaleSpinner.getSelectedItem().toString();
+                String teleopExchangeString = teleopExchangeSpinner.getSelectedItem().toString();
                 values[6] = teleopExchangeString;
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
@@ -173,6 +173,10 @@ public class DataEntryActivity extends AppCompatActivity {
                 } catch (IOException ex) {
                     Log.e(String.valueOf(Log.ERROR), ex.getMessage());
                 }
+
+                Toast.makeText(DataEntryActivity.this,
+                        ""+ totalScore,
+                        Toast.LENGTH_LONG).show();
 
                 startActivity(returnMainActivity);
 

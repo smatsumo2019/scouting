@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class DataEntryActivity extends AppCompatActivity {
 
 
     int totalScore = 0;
+    String matchString = "";
+    String[] values = new String[8];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,21 +124,27 @@ public class DataEntryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
 
+                matchString =  matchInput.getText().toString();
+                values[0] = matchString;
+                String teamString  =  matchInput.getText().toString();
+                values[1] = teamString;
 
                 String autoScaleString = autoScaleSpinner.getSelectedItem().toString();
+                values[2] = autoScaleString;
                 int autoScaleInt = Integer.parseInt(autoScaleString);
                 String autoSwitchString = autoSwitchSpinner.getSelectedItem().toString();
+                values[3] = autoSwitchString;
                 int autoSwitchInt = Integer.parseInt(autoSwitchString);
                 String teleopScaleString = teleopScaleSpinner.getSelectedItem().toString();
+                values[4] = teleopScaleString;
                 int teleopScaleInt = Integer.parseInt(teleopScaleString);
                 String teleopSwitchString = teleopScaleSpinner.getSelectedItem().toString();
+                values[5] = teleopSwitchString;
                 int teleopSwitchInt = Integer.parseInt(teleopSwitchString);
                 String teleopExchangeString = teleopScaleSpinner.getSelectedItem().toString();
+                values[6] = teleopExchangeString;
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
-
-                String matchString      =  matchInput.getText().toString();
-                String teamString      =  matchInput.getText().toString();
 
 
 
@@ -156,6 +166,13 @@ public class DataEntryActivity extends AppCompatActivity {
 
 
 
+
+                CSVGenerator csvGenerator = new CSVGenerator();
+                try {
+                    csvGenerator.generateCSVFile(values);
+                } catch (IOException ex) {
+                    Log.e(String.valueOf(Log.ERROR), ex.getMessage());
+                }
 
                 startActivity(returnMainActivity);
 
@@ -186,6 +203,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 break;
         }
     }
+
 
 
     public static boolean onCheckboxClicked(View view) {

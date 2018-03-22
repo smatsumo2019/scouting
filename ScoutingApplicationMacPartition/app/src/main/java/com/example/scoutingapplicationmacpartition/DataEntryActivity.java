@@ -22,6 +22,7 @@ public class DataEntryActivity extends AppCompatActivity {
 
     int totalScore = 0;
     String matchString = "";
+    String teamString = "";
     String[] values = new String[8];
 
     @Override
@@ -100,7 +101,7 @@ public class DataEntryActivity extends AppCompatActivity {
 
                 matchString =  matchInput.getText().toString();
                 values[0] = matchString;
-                String teamString  =  matchInput.getText().toString();
+                teamString  =  matchInput.getText().toString();
                 values[1] = teamString;
 
                 String autoScaleString = autoScaleSpinner.getSelectedItem().toString();

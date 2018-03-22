@@ -1,13 +1,10 @@
 package com.example.scoutingapplicationmacpartition;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -100,29 +97,6 @@ public class DataEntryActivity extends AppCompatActivity {
                 boolean checkForce = onCheckboxClicked(findViewById(R.id.checkbox_force));
                 boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
 
-                int boostInt;
-                int forceInt;
-                int levitateInt;
-
-                if (checkBoost) {
-                    boostInt = 20;
-                } else {
-                    boostInt = 0;
-                }
-
-                if (checkForce) {
-                    forceInt = 20;
-                } else {
-                    forceInt = 0;
-                }
-
-                if (checkLevitate) {
-                    levitateInt = 30;
-                } else {
-                    levitateInt = 0;
-                }
-
-
 
                 matchString =  matchInput.getText().toString();
                 values[0] = matchString;
@@ -146,24 +120,24 @@ public class DataEntryActivity extends AppCompatActivity {
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
 
+                if (checkBoost) {
+                    totalScore+= 20;
+                }
+
+                if (checkForce) {
+                    totalScore += 20;
+                }
+
+                if (checkLevitate) {
+                    totalScore += 30;
+                }
 
 
-                totalScore+=boostInt;
-                totalScore+=forceInt;
-                totalScore+=levitateInt;
                 totalScore+= (autoScaleInt*10);
                 totalScore+= (autoSwitchInt*10);
                 totalScore+= (teleopExchangeInt*5);
                 totalScore+= (teleopScaleInt*5);
                 totalScore+= (teleopSwitchInt*5);
-
-
-                //Context context = getActivity();
-                //SharedPreferences sharedPref = context.getSharedPreferences(
-                //        getString(enteredName), Context.MODE_PRIVATE);
-
-
-
 
 
 

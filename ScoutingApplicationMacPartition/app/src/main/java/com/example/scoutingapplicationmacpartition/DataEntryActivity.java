@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -121,19 +122,64 @@ public class DataEntryActivity extends AppCompatActivity {
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
 
+                //getting radio button inputs
+                RadioButton clicked;
+                RadioGroup buttonGroup;
+                int buttonId;
+
+                //getting if auto line crossed
+                buttonGroup = findViewById(R.id.autoCrossRadio);
+                buttonId = buttonGroup.getCheckedRadioButtonId();
+                clicked = findViewById(buttonId);
+                boolean hasCrossed = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+
+                //getting if there was an autonomous foul
+                buttonGroup = findViewById(R.id.autoFoulRadio);
+                buttonId = buttonGroup.getCheckedRadioButtonId();
+                clicked = findViewById(buttonId);
+                boolean hasAutoFouled = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+
+                //getting if robot climbed
+                buttonGroup = findViewById(R.id.climbRadio);
+                buttonId = buttonGroup.getCheckedRadioButtonId();
+                clicked = findViewById(buttonId);
+                boolean hasClimbed = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                //getting if robot ended up on platform
+                buttonGroup = findViewById(R.id.platformRadio);
+                buttonId = buttonGroup.getCheckedRadioButtonId();
+                clicked = findViewById(buttonId);
+                boolean wasOnPlatform = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+
+                //getting if there was a teleop foul
+                buttonGroup = findViewById(R.id.teleopFoulRadio);
+                buttonId = buttonGroup.getCheckedRadioButtonId();
+                clicked = findViewById(buttonId);
+                boolean hasTeleOpFouled = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+
                 if (checkBoost) {
                     totalScore+= 20;
                 }
-
                 if (checkForce) {
                     totalScore += 20;
                 }
-
                 if (checkLevitate) {
                     totalScore += 30;
                 }
-
-
+                if(hasCrossed) {
+                    totalScore+= 5;
+                }
+                if(hasAutoFouled) {
+                    totalScore-= 40;
+                }
+                if(hasClimbed) {
+                    totalScore+= 30;
+                }
+                if(wasOnPlatform) {
+                    totalScore+= 10;
+                }
+                if(hasTeleOpFouled) {
+                    totalScore-= 40;
+                }
                 totalScore+= (autoScaleInt*10);
                 totalScore+= (autoSwitchInt*10);
                 totalScore+= (teleopExchangeInt*5);
@@ -148,7 +194,6 @@ public class DataEntryActivity extends AppCompatActivity {
                 } catch (IOException ex) {
                     Log.e(String.valueOf(Log.ERROR), ex.getMessage());
                 }
-
                 Toast.makeText(DataEntryActivity.this,
                         ""+ totalScore,
                         Toast.LENGTH_LONG).show();

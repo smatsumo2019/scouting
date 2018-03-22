@@ -12,14 +12,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="Match Number"/>
+        android:text="Match Number (number only)"/>
 
     <EditText
         android:id="@+id/matchField"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/matchNumber"
-        android:hint="ex: Match 17" />
+        android:inputType="number"
+        android:hint="ex: 17" />
 
     <TextView
         android:id="@+id/teamNumber"
@@ -27,14 +28,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/matchField"
         android:layout_margin="5dp"
-        android:text="Team Number"/>
+        android:text="Team Number (number only)"/>
 
     <EditText
         android:id="@+id/teamField"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/teamNumber"
-        android:hint="ex: Team 172" />
+        android:inputType="number"
+        android:hint="ex: 172" />
 
     <TextView
         android:id="@+id/autoTitle"

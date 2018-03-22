@@ -100,9 +100,9 @@ public class DataEntryActivity extends AppCompatActivity {
                 boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
 
 
-                matchString =  matchInput.getText().toString();
+                matchString =  "Match " + matchInput.getText().toString();
                 values[0] = matchString;
-                teamString  =  matchInput.getText().toString();
+                teamString  =  "Team " + matchInput.getText().toString();
                 values[1] = teamString;
 
                 String autoScaleString = autoScaleSpinner.getSelectedItem().toString();

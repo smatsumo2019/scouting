@@ -17,7 +17,7 @@ public class CSVReader extends DataEntryActivity {
             reader = new CSVReader(new FileReader(csvFile));
             String[] line;
             while ((line = reader.readNext()) != null) {
-                System.out.println("Tablet [matchString= " + value[0] + ", teamString= " + value[1] + ", autoScaleString= " + value[2] + ", autoSwitchString= " + value[3] + ", teleopScaleString= " + value[4] + ", teleopSwitchString= " + value[5] + ", teleopExchangeString= " + value[6] + ", competitionString= " + value[7] "]");
+                System.out.println("Tablet [matchString= " + values[0] + ", teamString= " + values[1] + ", autoScaleString= " + values[2] + ", autoSwitchString= " + values[3] + ", teleopScaleString= " + values[4] + ", teleopSwitchString= " + values[5] + ", teleopExchangeString= " + values[6] + ", competitionString= " + values[7] "]");
             }
         } catch (IOException e) {
             e.printStackTrace();

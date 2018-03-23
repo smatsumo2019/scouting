@@ -24,7 +24,13 @@ public class DataEntryActivity extends AppCompatActivity {
     int totalScore = 0;
     String matchString = "";
     String teamString = "";
-    String[] values = new String[8];
+    String climbString = "";
+    String platformString = "";
+    String crossString = "";
+    String autoFoulString = "";
+    String teleopFoulString = "";
+
+    String[] values = new String[11];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,29 +140,60 @@ public class DataEntryActivity extends AppCompatActivity {
                 buttonId = buttonGroup.getCheckedRadioButtonId();
                 clicked = findViewById(buttonId);
                 boolean hasCrossed = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                if (hasCrossed) {
+                    crossString = "Yes";
+                } else {
+                    crossString = "No";
+                }
+                values[7] = crossString;
 
                 //getting if there was an autonomous foul
                 buttonGroup = findViewById(R.id.autoFoulRadio);
                 buttonId = buttonGroup.getCheckedRadioButtonId();
                 clicked = findViewById(buttonId);
                 boolean hasAutoFouled = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                if (hasAutoFouled) {
+                    autoFoulString = "Yes";
+                } else {
+                    autoFoulString = "No";
+                }
+                values[8] = autoFoulString;
 
                 //getting if robot climbed
                 buttonGroup = findViewById(R.id.climbRadio);
                 buttonId = buttonGroup.getCheckedRadioButtonId();
                 clicked = findViewById(buttonId);
                 boolean hasClimbed = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                if (hasClimbed) {
+                    climbString = "Yes";
+                } else {
+                    climbString = "No";
+                }
+                values[9] = climbString;
+
                 //getting if robot ended up on platform
                 buttonGroup = findViewById(R.id.platformRadio);
                 buttonId = buttonGroup.getCheckedRadioButtonId();
                 clicked = findViewById(buttonId);
                 boolean wasOnPlatform = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                if (wasOnPlatform) {
+                    platformString = "Yes";
+                } else {
+                    platformString = "No";
+                }
+                values[10] = platformString;
 
                 //getting if there was a teleop foul
                 buttonGroup = findViewById(R.id.teleopFoulRadio);
                 buttonId = buttonGroup.getCheckedRadioButtonId();
                 clicked = findViewById(buttonId);
-                boolean hasTeleOpFouled = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                boolean hasTeleopFouled = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
+                if (hasTeleopFouled) {
+                    teleopFoulString = "Yes";
+                } else {
+                    teleopFoulString = "No";
+                }
+                values[11] = teleopFoulString;
 
                 //Quick maths for calculating total score
                 if (checkBoost) {
@@ -180,11 +217,12 @@ public class DataEntryActivity extends AppCompatActivity {
                 if(wasOnPlatform) {
                     totalScore+= 10;
                 }
-                if(hasTeleOpFouled) {
+                if(hasTeleopFouled) {
                     totalScore-= 40;
                 }
-                totalScore+= (autoScaleInt*10);
-                totalScore+= (autoSwitchInt*10);
+
+                totalScore+= (autoScaleInt*20);
+                totalScore+= (autoSwitchInt*20);
                 totalScore+= (teleopExchangeInt*5);
                 totalScore+= (teleopScaleInt*5);
                 totalScore+= (teleopSwitchInt*5);

@@ -241,7 +241,7 @@ public class DataEntryActivity extends AppCompatActivity {
 
                 //Toast statement for checking
                 Toast.makeText(DataEntryActivity.this,
-                        ""+ totalScore,
+                        "Data Saved!",
                         Toast.LENGTH_LONG).show();
 
                 //Returns to main activity

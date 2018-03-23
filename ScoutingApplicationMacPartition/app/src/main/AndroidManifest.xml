@@ -22,7 +22,7 @@
         <activity
             android:name=".DataEntryActivity"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".DataViewActivity"></activity>
+        <activity android:name=".HowToUseActivity"></activity>
     </application>
 
 </manifest>

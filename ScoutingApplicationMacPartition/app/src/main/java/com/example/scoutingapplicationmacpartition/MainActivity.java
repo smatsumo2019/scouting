@@ -17,19 +17,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Intent startEntryData = new Intent(this, DataEntryActivity.class);
-        final Intent startViewData = new Intent(this, DataViewActivity.class);
+        final Intent startHowToUse = new Intent(this, HowToUseActivity.class);
 
         TextView textView = (TextView) findViewById(R.id.title);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/PressStart2P.ttf");
         textView.setTypeface(typeface);
 
-        textView = (TextView) findViewById(R.id.mainEnterData);
+        textView = (TextView) findViewById(R.id.mainEnterDataButton);
         textView.setTypeface(typeface);
 
-        textView = (TextView) findViewById(R.id.mainViewData);
+        textView = (TextView) findViewById(R.id.howToUseButton);
         textView.setTypeface(typeface);
 
-        Button entryButton = findViewById(R.id.mainEnterData);
+        Button entryButton = findViewById(R.id.mainEnterDataButton);
 
         final AlphaAnimation BUTTON_CLICK = new AlphaAnimation(1f, 0.5f);
         entryButton.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button viewButton = findViewById(R.id.mainViewData);
-        viewButton.setOnClickListener(new View.OnClickListener() {
+        Button howToUseButton = findViewById(R.id.howToUseButton);
+        howToUseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 v.startAnimation(BUTTON_CLICK);
-                startActivity(startViewData);
+                startActivity(startHowToUse);
             }
         });
 

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.scoutingapplicationmacpartition.HowToUseActivity"
+    android:orientation="vertical"
+    android:id = "@+id/titleScreen"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/howToUseText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="#000000"
+        android:text="How to use: Just put in your answers to each question!" />
+
+
+    <TextView
+        android:id="@+id/howToUseText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/howToUseText1"
+        android:layout_margin="5dp"
+        android:textColor="#000000"
+        android:text="Wondering why there is no method of viewing your data? That's because its stored in a CSV file, which will be used in a Google Spreadsheet!"/>
+
+    <TextView
+        android:id="@+id/howToUseText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/howToUseText2"
+        android:layout_margin="5dp"
+        android:textColor="#000000"
+        android:text="Don't worry, your information is being saved. Start scouting!"
+        />
+
+    <Button
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:id = "@+id/returnButton"
+        android:layout_below="@+id/howToUseText3"
+        android:background="@drawable/pink_button"
+        android:textSize="16sp"
+        android:text = "Return to Main Menu"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>

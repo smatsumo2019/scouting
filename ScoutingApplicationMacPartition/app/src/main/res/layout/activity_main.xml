@@ -23,7 +23,7 @@
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
-        android:id = "@+id/mainEnterData"
+        android:id = "@+id/mainEnterDataButton"
         android:layout_below="@+id/title"
         android:background="@drawable/pink_button"
         android:textSize="16sp"
@@ -34,11 +34,11 @@
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
-        android:id = "@+id/mainViewData"
-        android:layout_below="@+id/mainEnterData"
+        android:id = "@+id/howToUseButton"
+        android:layout_below="@+id/mainEnterDataButton"
         android:background="@drawable/pink_button"
         android:textSize="16sp"
-        android:text = "View Data"/>
+        android:text = "How to Use"/>
 
 
 </RelativeLayout>

@@ -18,9 +18,9 @@ public class CSVGenerator {
         FileWriter mFileWriter = new FileWriter(filePath, true);
         writer = new CSVWriter(mFileWriter);
 
-        String[] data = {"matchString= " + values[0] + ", teamString= " + values[1] + ", autoScaleString= " + values[2] + ", autoSwitchString= " + values[3] + ", teleopScaleString= " + values[4] + ", teleopSwitchString= " + values[5] + ", teleopExchangeString= " + values[6] + ", competitionString= " + values[7]};
+        //String[] data = {"matchString= " + values[0] + ", teamString= " + values[1] + ", autoScaleString= " + values[2] + ", autoSwitchString= " + values[3] + ", teleopScaleString= " + values[4] + ", teleopSwitchString= " + values[5] + ", teleopExchangeString= " + values[6] + ", competitionString= " + values[7]};
 
-        writer.writeNext(data);
+        writer.writeNext(values);
 
         writer.close();
 

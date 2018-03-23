@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:textColor="#000000"
             android:text="Match Number (number only)"/>
 
         <EditText
@@ -35,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/matchField"
             android:layout_margin="5dp"
+            android:textColor="#000000"
             android:text="Team Number (number only)"/>
 
         <EditText
@@ -51,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/teamField"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Autonomous Mode"
             android:textSize="16dp"/>
 
@@ -60,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/autoTitle"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Crossed the auto line?" />
 
         <RadioGroup
@@ -92,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/autoCrossRadio"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Number of Cubes in Switch During Auto" />
 
         <Spinner
@@ -106,6 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/autoSwitch"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Number of Cubes in Scale During Auto" />
 
         <Spinner
@@ -121,6 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/autoScale"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Fouled for Null Zone Entry?" />
 
         <RadioGroup
@@ -156,6 +163,7 @@
             android:textSize="16dp"
             android:layout_below="@+id/autoFoulRadio"
             android:layout_margin="5dp"
+            android:textColor="#000000"
             android:text="Teleoperated Mode" />
 
         <TextView
@@ -164,6 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/teleopTitle"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Number of Cubes in Switch During Teleop" />
 
         <Spinner
@@ -178,6 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/teleopSwitch"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Number of Cubes in Scale During Teleop" />
 
         <Spinner
@@ -192,6 +202,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/teleopScale"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Number of Cubes into Exchange During Teleop" />
 
         <Spinner
@@ -206,6 +217,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/teleopExchange"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Which Powerups were used?" />
 
         <CheckBox android:id="@+id/checkbox_force"
@@ -232,6 +244,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/checkbox_levitate"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Did they climb by the end?" />
 
         <RadioGroup
@@ -263,6 +276,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/climbRadio"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Did they park by the end?" />
 
         <RadioGroup
@@ -294,6 +308,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/platformRadio"
             android:layout_margin="3dp"
+            android:textColor="#000000"
             android:text="Fouled during the match?" />
 
         <RadioGroup

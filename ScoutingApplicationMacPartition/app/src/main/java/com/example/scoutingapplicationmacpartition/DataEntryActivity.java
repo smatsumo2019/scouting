@@ -30,7 +30,7 @@ public class DataEntryActivity extends AppCompatActivity {
     String autoFoulString = "";
     String teleopFoulString = "";
 
-    String[] values = new String[11];
+    String[] values = new String[12];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

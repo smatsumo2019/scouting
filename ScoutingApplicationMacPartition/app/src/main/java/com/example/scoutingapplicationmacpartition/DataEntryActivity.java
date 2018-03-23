@@ -237,6 +237,7 @@ public class DataEntryActivity extends AppCompatActivity {
                     Log.e(String.valueOf(Log.ERROR), ex.getMessage());
                 }
 
+
                 //Toast statement for checking
                 Toast.makeText(DataEntryActivity.this,
                         ""+ totalScore,

@@ -31,7 +31,7 @@ public class DataEntryActivity extends AppCompatActivity {
     String autoFoulString = "";
     String teleopFoulString = "";
 
-    String[] values = new String[12];
+    String[] values = new String[13];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +110,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 //Match and team string input
                 matchString =  "Match " + matchInput.getText().toString();
                 values[0] = matchString;
-                teamString  =  "Team " + matchInput.getText().toString();
+                teamString  =  "Team " + teamInput.getText().toString();
                 values[1] = teamString;
 
                 //Spinner code for scale, switch, exchange;
@@ -228,6 +228,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 totalScore+= (teleopScaleInt*5);
                 totalScore+= (teleopSwitchInt*5);
 
+                values[12] = "" + totalScore;
 
                 //CSV Generator that makes more CSV files
                 CSVGenerator csvGenerator = new CSVGenerator();

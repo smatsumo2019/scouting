@@ -1,330 +1,333 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.scoutingapplicationmacpartition.MainActivity"
     android:orientation="vertical"
+    android:padding="5dp"
+    android:fillViewport="false"
     android:id = "@+id/titleScreen">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id = "@+id/titleLayout">
 
-    <TextView
-        android:id="@+id/matchNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Match Number (number only)"/>
-
-    <EditText
-        android:id="@+id/matchField"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/matchNumber"
-        android:inputType="number"
-        android:hint="ex: 17" />
-
-    <TextView
-        android:id="@+id/teamNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/matchField"
-        android:layout_margin="5dp"
-        android:text="Team Number (number only)"/>
-
-    <EditText
-        android:id="@+id/teamField"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teamNumber"
-        android:inputType="number"
-        android:hint="ex: 172" />
-
-    <TextView
-        android:id="@+id/autoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teamField"
-        android:layout_margin="3dp"
-        android:text="Autonomous Mode"
-        android:textSize="16dp"/>
-
-    <TextView
-        android:id="@+id/autoLineText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/autoTitle"
-        android:layout_margin="3dp"
-        android:text="Crossed the auto line?" />
-
-    <RadioGroup
-        android:id="@+id/autoCrossRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/autoLineText"
-        android:layout_margin="0dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/cross_yes"
+        <TextView
+            android:id="@+id/matchNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:layout_margin="5dp"
+            android:text="Match Number (number only)"/>
 
+        <EditText
+            android:id="@+id/matchField"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/matchNumber"
+            android:inputType="number"
+            android:hint="ex: 17" />
 
-        <RadioButton
-            android:id="@+id/cross_no"
+        <TextView
+            android:id="@+id/teamNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="No" />
+            android:layout_below="@id/matchField"
+            android:layout_margin="5dp"
+            android:text="Team Number (number only)"/>
 
-    </RadioGroup>
+        <EditText
+            android:id="@+id/teamField"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teamNumber"
+            android:inputType="number"
+            android:hint="ex: 172" />
 
-    <TextView
-        android:id="@+id/autoSwitchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/autoCrossRadio"
-        android:layout_margin="3dp"
-        android:text="Number of Cubes in Switch During Auto" />
-
-    <Spinner
-        android:id="@+id/autoSwitch"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/autoSwitchText"/>
-
-    <TextView
-        android:id="@+id/autoScaleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/autoSwitch"
-        android:layout_margin="3dp"
-        android:text="Number of Cubes in Scale During Auto" />
-
-    <Spinner
-        android:id="@+id/autoScale"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/autoScaleText"/>
-
-
-    <TextView
-        android:id="@+id/foulNulltext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/autoScale"
-        android:layout_margin="3dp"
-        android:text="Fouled for Null Zone Entry?" />
-
-    <RadioGroup
-        android:id="@+id/autoFoulRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/foulNulltext"
-        android:layout_margin="0dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/foul_yes"
+        <TextView
+            android:id="@+id/autoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:layout_below="@id/teamField"
+            android:layout_margin="3dp"
+            android:text="Autonomous Mode"
+            android:textSize="16dp"/>
 
-
-        <RadioButton
-            android:id="@+id/foul_no"
+        <TextView
+            android:id="@+id/autoLineText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="No" />
+            android:layout_below="@id/autoTitle"
+            android:layout_margin="3dp"
+            android:text="Crossed the auto line?" />
 
-    </RadioGroup>
-
-
-
-    <TextView
-        android:id="@+id/teleopTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:layout_below="@+id/autoFoulRadio"
-        android:layout_margin="5dp"
-        android:text="Teleoperated Mode" />
-
-    <TextView
-        android:id="@+id/teleopSwitchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/teleopTitle"
-        android:layout_margin="3dp"
-        android:text="Number of Cubes in Switch During Teleop" />
-
-    <Spinner
-        android:id="@+id/teleopSwitch"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopSwitchText"/>
-
-    <TextView
-        android:id="@+id/teleopScaleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/teleopSwitch"
-        android:layout_margin="3dp"
-        android:text="Number of Cubes in Scale During Teleop" />
-
-    <Spinner
-        android:id="@+id/teleopScale"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopScaleText"/>
-
-    <TextView
-        android:id="@+id/teleopExchangeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/teleopScale"
-        android:layout_margin="3dp"
-        android:text="Number of Cubes into Exchange During Teleop" />
-
-    <Spinner
-        android:id="@+id/teleopExchange"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopExchangeText"/>
-
-    <TextView
-        android:id="@+id/teleopPowerupText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/teleopExchange"
-        android:layout_margin="3dp"
-        android:text="Which Powerups were used?" />
-
-    <CheckBox android:id="@+id/checkbox_force"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopPowerupText"
-        android:text="Force" />
-    <CheckBox android:id="@+id/checkbox_boost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopPowerupText"
-        android:layout_toRightOf="@id/checkbox_force"
-        android:text="Boost" />
-    <CheckBox android:id="@+id/checkbox_levitate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopPowerupText"
-        android:layout_toRightOf="@id/checkbox_boost"
-        android:text="Levitate" />
-
-
-
-
-    <TextView
-        android:id="@+id/climbText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkbox_levitate"
-        android:layout_margin="3dp"
-        android:text="Did they climb by the end?" />
-
-    <RadioGroup
-        android:id="@+id/climbRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/climbText"
-        android:layout_margin="0dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/climb_yes"
+        <RadioGroup
+            android:id="@+id/autoCrossRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:layout_below="@+id/autoLineText"
+            android:layout_margin="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/cross_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
 
 
-        <RadioButton
-            android:id="@+id/climb_no"
+            <RadioButton
+                android:id="@+id/cross_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/autoSwitchText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="No" />
+            android:layout_below="@+id/autoCrossRadio"
+            android:layout_margin="3dp"
+            android:text="Number of Cubes in Switch During Auto" />
 
-    </RadioGroup>
+        <Spinner
+            android:id="@+id/autoSwitch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoSwitchText"/>
 
-    <TextView
-        android:id="@+id/platformText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/climbRadio"
-        android:layout_margin="3dp"
-        android:text="Did they park by the end?" />
-
-    <RadioGroup
-        android:id="@+id/platformRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/platformText"
-        android:layout_margin="0dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/platform_yes"
+        <TextView
+            android:id="@+id/autoScaleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:layout_below="@+id/autoSwitch"
+            android:layout_margin="3dp"
+            android:text="Number of Cubes in Scale During Auto" />
+
+        <Spinner
+            android:id="@+id/autoScale"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoScaleText"/>
 
 
-        <RadioButton
-            android:id="@+id/platform_no"
+        <TextView
+            android:id="@+id/foulNulltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="No" />
+            android:layout_below="@+id/autoScale"
+            android:layout_margin="3dp"
+            android:text="Fouled for Null Zone Entry?" />
 
-    </RadioGroup>
-
-
-    <TextView
-        android:id="@+id/teleopfoulNullText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/platformRadio"
-        android:layout_margin="3dp"
-        android:text="Fouled during the match?" />
-
-    <RadioGroup
-        android:id="@+id/teleopFoulRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/teleopfoulNullText"
-        android:layout_margin="0dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/teleop_foul_yes"
+        <RadioGroup
+            android:id="@+id/autoFoulRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yes" />
+            android:layout_below="@+id/foulNulltext"
+            android:layout_margin="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/foul_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
 
 
-        <RadioButton
-            android:id="@+id/teleop_foul_no"
+            <RadioButton
+                android:id="@+id/foul_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No" />
+
+        </RadioGroup>
+
+
+
+        <TextView
+            android:id="@+id/teleopTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="No" />
+            android:textSize="16dp"
+            android:layout_below="@+id/autoFoulRadio"
+            android:layout_margin="5dp"
+            android:text="Teleoperated Mode" />
 
-    </RadioGroup>
+        <TextView
+            android:id="@+id/teleopSwitchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teleopTitle"
+            android:layout_margin="3dp"
+            android:text="Number of Cubes in Switch During Teleop" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teleopFoulRadio"
-        android:id="@+id/submitButton"
-        android:text="Submit"/>
+        <Spinner
+            android:id="@+id/teleopSwitch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopSwitchText"/>
+
+        <TextView
+            android:id="@+id/teleopScaleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teleopSwitch"
+            android:layout_margin="3dp"
+            android:text="Number of Cubes in Scale During Teleop" />
+
+        <Spinner
+            android:id="@+id/teleopScale"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopScaleText"/>
+
+        <TextView
+            android:id="@+id/teleopExchangeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teleopScale"
+            android:layout_margin="3dp"
+            android:text="Number of Cubes into Exchange During Teleop" />
+
+        <Spinner
+            android:id="@+id/teleopExchange"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopExchangeText"/>
+
+        <TextView
+            android:id="@+id/teleopPowerupText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teleopExchange"
+            android:layout_margin="3dp"
+            android:text="Which Powerups were used?" />
+
+        <CheckBox android:id="@+id/checkbox_force"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopPowerupText"
+            android:text="Force" />
+        <CheckBox android:id="@+id/checkbox_boost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopPowerupText"
+            android:layout_toRightOf="@id/checkbox_force"
+            android:text="Boost" />
+        <CheckBox android:id="@+id/checkbox_levitate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopPowerupText"
+            android:layout_toRightOf="@id/checkbox_boost"
+            android:text="Levitate" />
+
+        <TextView
+            android:id="@+id/climbText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkbox_levitate"
+            android:layout_margin="3dp"
+            android:text="Did they climb by the end?" />
+
+        <RadioGroup
+            android:id="@+id/climbRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/climbText"
+            android:layout_margin="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/climb_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
 
 
-</RelativeLayout>
+            <RadioButton
+                android:id="@+id/climb_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/platformText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/climbRadio"
+            android:layout_margin="3dp"
+            android:text="Did they park by the end?" />
+
+        <RadioGroup
+            android:id="@+id/platformRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/platformText"
+            android:layout_margin="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/platform_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+
+            <RadioButton
+                android:id="@+id/platform_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/teleopfoulNullText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/platformRadio"
+            android:layout_margin="3dp"
+            android:text="Fouled during the match?" />
+
+        <RadioGroup
+            android:id="@+id/teleopFoulRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/teleopfoulNullText"
+            android:layout_margin="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/teleop_foul_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+
+            <RadioButton
+                android:id="@+id/teleop_foul_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No" />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/teleopFoulRadio"
+            android:id="@+id/submitButton"
+            android:text="Submit"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

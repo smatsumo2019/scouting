@@ -115,19 +115,19 @@ public class DataEntryActivity extends AppCompatActivity {
 
                 //Spinner code for scale, switch, exchange;
                 String autoScaleString = autoScaleSpinner.getSelectedItem().toString();
-                values[2] = autoScaleString;
+                values[3] = autoScaleString;
                 int autoScaleInt = Integer.parseInt(autoScaleString);
                 String autoSwitchString = autoSwitchSpinner.getSelectedItem().toString();
-                values[3] = autoSwitchString;
+                values[4] = autoSwitchString;
                 int autoSwitchInt = Integer.parseInt(autoSwitchString);
-                String teleopScaleString = teleopScaleSpinner.getSelectedItem().toString();
-                values[4] = teleopScaleString;
-                int teleopScaleInt = Integer.parseInt(teleopScaleString);
                 String teleopSwitchString = teleopSwitchSpinner.getSelectedItem().toString();
-                values[5] = teleopSwitchString;
+                values[6] = teleopSwitchString;
                 int teleopSwitchInt = Integer.parseInt(teleopSwitchString);
+                String teleopScaleString = teleopScaleSpinner.getSelectedItem().toString();
+                values[7] = teleopScaleString;
+                int teleopScaleInt = Integer.parseInt(teleopScaleString);
                 String teleopExchangeString = teleopExchangeSpinner.getSelectedItem().toString();
-                values[6] = teleopExchangeString;
+                values[8] = teleopExchangeString;
                 int teleopExchangeInt = Integer.parseInt(teleopExchangeString);
 
 
@@ -146,7 +146,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 } else {
                     crossString = "No";
                 }
-                values[7] = crossString;
+                values[2] = crossString;
 
                 //getting if there was an autonomous foul
                 buttonGroup = findViewById(R.id.autoFoulRadio);
@@ -158,7 +158,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 } else {
                     autoFoulString = "No";
                 }
-                values[8] = autoFoulString;
+                values[5] = autoFoulString;
 
                 //getting if robot climbed
                 buttonGroup = findViewById(R.id.climbRadio);

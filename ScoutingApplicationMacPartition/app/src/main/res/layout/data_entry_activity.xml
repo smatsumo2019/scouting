@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:fillViewport="false"
-    android:id = "@+id/titleScreen">
+    android:id = "@+id/titleScreen"
+    android:background="@color/colorPrimary">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -336,10 +337,11 @@
         </RadioGroup>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
             android:layout_below="@id/teleopFoulRadio"
             android:id="@+id/submitButton"
+            android:background="@drawable/pink_button"
             android:text="Submit"/>
 
 

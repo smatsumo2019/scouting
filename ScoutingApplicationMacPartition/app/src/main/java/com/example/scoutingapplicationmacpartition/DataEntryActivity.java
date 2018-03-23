@@ -205,31 +205,6 @@ public class DataEntryActivity extends AppCompatActivity {
 
     }
 
-    String crossYN = "Filler";
-    boolean crossBool = false;
-
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.cross_yes:
-                if (checked)
-                    crossYN = "Yes";
-                    crossBool = true;
-                break;
-
-            case R.id.cross_no:
-                if (checked)
-                    crossYN = "No";
-                    crossBool = false;
-                break;
-        }
-    }
-
-
-
     public static boolean onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();

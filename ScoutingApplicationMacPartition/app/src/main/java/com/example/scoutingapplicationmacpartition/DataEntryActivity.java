@@ -90,21 +90,23 @@ public class DataEntryActivity extends AppCompatActivity {
 
         final Intent returnMainActivity = new Intent(this, MainActivity.class);
 
-        Button entryButton = findViewById(R.id.submitButton);
-        entryButton.setOnClickListener(new View.OnClickListener() {
+        Button submitButton = findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
 
+                //Checkbox bools
                 boolean checkBoost = onCheckboxClicked(findViewById(R.id.checkbox_boost));
                 boolean checkForce = onCheckboxClicked(findViewById(R.id.checkbox_force));
                 boolean checkLevitate = onCheckboxClicked(findViewById(R.id.checkbox_levitate));
 
-
+                //Match and team string input
                 matchString =  "Match " + matchInput.getText().toString();
                 values[0] = matchString;
                 teamString  =  "Team " + matchInput.getText().toString();
                 values[1] = teamString;
 
+                //Spinner code for scale, switch, exchange;
                 String autoScaleString = autoScaleSpinner.getSelectedItem().toString();
                 values[2] = autoScaleString;
                 int autoScaleInt = Integer.parseInt(autoScaleString);
@@ -156,6 +158,7 @@ public class DataEntryActivity extends AppCompatActivity {
                 clicked = findViewById(buttonId);
                 boolean hasTeleOpFouled = String.valueOf(clicked.getText()).equalsIgnoreCase("yes");
 
+                //Quick maths for calculating total score
                 if (checkBoost) {
                     totalScore+= 20;
                 }
@@ -187,17 +190,20 @@ public class DataEntryActivity extends AppCompatActivity {
                 totalScore+= (teleopSwitchInt*5);
 
 
-
+                //CSV Generator that makes more CSV files
                 CSVGenerator csvGenerator = new CSVGenerator();
                 try {
                     csvGenerator.generateCSVFile(values);
                 } catch (IOException ex) {
                     Log.e(String.valueOf(Log.ERROR), ex.getMessage());
                 }
+
+                //Toast statement for checking
                 Toast.makeText(DataEntryActivity.this,
                         ""+ totalScore,
                         Toast.LENGTH_LONG).show();
 
+                //Returns to main activity
                 startActivity(returnMainActivity);
 
             }
